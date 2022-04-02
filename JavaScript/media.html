@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Alunos</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+            text-align: center;
+        }
+        div#res {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Média</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2"> +
+    <input type="number" name="txtn3" id="txtn3"> +
+    <input type="button" value="Média" onclick="media()">
+    <div id="res">Resultado</div>
+    <script>
+        let name = prompt ("Nome do aluno");
+        function media() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var tn3 = window.document.querySelector('input#txtn3')
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var n3 = Number(tn3.value)
+            var s = (n1 + n2 + n3)/3
+            var r = s >= 7 ? `Aluno ${name} foi aprovado` : `Aluno ${name} foi reprovado`
+            res.innerHTML = `A média do aluno ${name} é igual a <strong>${s.toFixed(2)}</strong>. ${r}!`
+        }
+    </script>
+</body>
+</html>
